@@ -1,0 +1,8 @@
+- name: default
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url: postgres://hlaoohqbcudzaw:813a2316743f600f3664950c175bbc0c76678627a26da9495315eed92c87851d@ec2-52-3-239-135.compute-1.amazonaws.com:5432/d4fa6eqmqb7ub8
+      isolation_level: read-committed
+      use_prepared_statements: false
+  tables: "!include default/tables/tables.yaml"
