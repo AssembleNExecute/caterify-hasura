@@ -55,6 +55,26 @@ select_permissions:
     - online_status
     - gender
     filter:
+      id:
+        _eq: X-Hasura-User-Id
+  role: business_owner
+- permission:
+    allow_aggregations: true
+    columns:
+    - id
+    - first_name
+    - last_name
+    - email
+    - phone_number
+    - logo_url
+    - display_name
+    - is_active
+    - is_deleted
+    - created_at
+    - updated_at
+    - online_status
+    - gender
+    filter:
       _or:
       - id:
           _eq: X-Hasura-User-Id
