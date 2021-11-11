@@ -16,6 +16,13 @@ array_relationships:
       table:
         name: customer_addresses
         schema: public
+- name: orders
+  using:
+    foreign_key_constraint_on:
+      column: customer_id
+      table:
+        name: orders
+        schema: public
 - name: stores
   using:
     foreign_key_constraint_on:
@@ -30,3 +37,135 @@ array_relationships:
       table:
         name: user_x_roles
         schema: public
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - id
+    - first_name
+    - last_name
+    - email
+    - phone_number
+    - logo_url
+    - display_name
+    - is_active
+    - is_deleted
+    - created_at
+    - updated_at
+    - online_status
+    - gender
+    filter:
+      _or:
+      - id:
+          _eq: X-Hasura-User-Id
+      - user_x_roles:
+          role_id:
+            _in:
+            - 4
+            - 5
+  role: caterer
+- permission:
+    allow_aggregations: true
+    columns:
+    - id
+    - is_active
+    - is_deleted
+    - online_status
+    - display_name
+    - email
+    - first_name
+    - last_name
+    - logo_url
+    - phone_number
+    - created_at
+    - updated_at
+    - gender
+    filter:
+      _or:
+      - id:
+          _eq: X-Hasura-User-Id
+      - user_x_roles:
+          role_id:
+            _eq: 3
+  role: chef
+- permission:
+    allow_aggregations: true
+    columns:
+    - id
+    - first_name
+    - last_name
+    - email
+    - phone_number
+    - logo_url
+    - display_name
+    - is_active
+    - is_deleted
+    - created_at
+    - updated_at
+    - online_status
+    - gender
+    filter:
+      id:
+        _eq: X-Hasura-User-Id
+  role: customer
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - id
+    - is_active
+    - is_deleted
+    - online_status
+    - display_name
+    - email
+    - first_name
+    - last_name
+    - logo_url
+    - phone_number
+    - created_at
+    - updated_at
+    - gender
+    filter:
+      id:
+        _eq: X-Hasura-User-Id
+  role: caterer
+- permission:
+    check: null
+    columns:
+    - id
+    - is_active
+    - is_deleted
+    - online_status
+    - display_name
+    - email
+    - first_name
+    - last_name
+    - logo_url
+    - phone_number
+    - created_at
+    - updated_at
+    - gender
+    filter:
+      id:
+        _eq: X-Hasura-User-Id
+  role: chef
+- permission:
+    check: null
+    columns:
+    - id
+    - is_active
+    - is_deleted
+    - online_status
+    - display_name
+    - email
+    - first_name
+    - last_name
+    - logo_url
+    - phone_number
+    - created_at
+    - updated_at
+    - gender
+    filter:
+      id:
+        _eq: X-Hasura-User-Id
+  role: customer

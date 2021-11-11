@@ -1,0 +1,3 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- CREATE TYPE order_status AS ENUM ('ORDER_PLACED', 'ORDER_CANCELLED', 'ORDER_PENDING', 'ORDER_TIMED_OUT', 'ORDER_CONFIRMED', 'ORDER_REJECTED', 'ORDER_IN_PROGRESS', 'ORDER_READY_FOR_DELIVERY', 'ORDER_COMPLETED');

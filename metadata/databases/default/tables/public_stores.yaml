@@ -9,10 +9,45 @@ object_relationships:
   using:
     foreign_key_constraint_on: store_owner_id
 array_relationships:
+- name: categories
+  using:
+    foreign_key_constraint_on:
+      column: store_id
+      table:
+        name: category
+        schema: public
+- name: discounts
+  using:
+    foreign_key_constraint_on:
+      column: store_id
+      table:
+        name: discounts
+        schema: public
+- name: items
+  using:
+    foreign_key_constraint_on:
+      column: store_id
+      table:
+        name: items
+        schema: public
+- name: orders
+  using:
+    foreign_key_constraint_on:
+      column: store_id
+      table:
+        name: orders
+        schema: public
 - name: social_media_profiles
   using:
     foreign_key_constraint_on:
       column: store_id
       table:
         name: social_media_profiles
+        schema: public
+- name: taxes
+  using:
+    foreign_key_constraint_on:
+      column: store_id
+      table:
+        name: taxes
         schema: public

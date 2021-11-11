@@ -1,0 +1,15 @@
+table:
+  name: taxes
+  schema: public
+object_relationships:
+- name: store
+  using:
+    foreign_key_constraint_on: store_id
+array_relationships:
+- name: order_x_taxes
+  using:
+    foreign_key_constraint_on:
+      column: tax_id
+      table:
+        name: order_x_taxes
+        schema: public

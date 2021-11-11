@@ -1,0 +1,10 @@
+table:
+  name: order_x_taxes
+  schema: public
+object_relationships:
+- name: order
+  using:
+    foreign_key_constraint_on: order_id
+- name: tax
+  using:
+    foreign_key_constraint_on: tax_id

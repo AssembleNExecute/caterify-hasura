@@ -1,0 +1,42 @@
+table:
+  name: orders
+  schema: public
+object_relationships:
+- name: customer_address
+  using:
+    foreign_key_constraint_on: customer_address_id
+- name: store
+  using:
+    foreign_key_constraint_on: store_id
+- name: user
+  using:
+    foreign_key_constraint_on: customer_id
+array_relationships:
+- name: order_x_disounts
+  using:
+    foreign_key_constraint_on:
+      column: order_id
+      table:
+        name: order_x_disounts
+        schema: public
+- name: order_x_items
+  using:
+    foreign_key_constraint_on:
+      column: order_id
+      table:
+        name: order_x_items
+        schema: public
+- name: order_x_payments
+  using:
+    foreign_key_constraint_on:
+      column: order_id
+      table:
+        name: order_x_payment
+        schema: public
+- name: order_x_taxes
+  using:
+    foreign_key_constraint_on:
+      column: order_id
+      table:
+        name: order_x_taxes
+        schema: public

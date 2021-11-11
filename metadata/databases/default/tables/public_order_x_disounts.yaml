@@ -1,0 +1,10 @@
+table:
+  name: order_x_disounts
+  schema: public
+object_relationships:
+- name: discount
+  using:
+    foreign_key_constraint_on: discount_id
+- name: order
+  using:
+    foreign_key_constraint_on: order_id

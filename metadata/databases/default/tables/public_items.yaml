@@ -1,0 +1,18 @@
+table:
+  name: items
+  schema: public
+object_relationships:
+- name: category
+  using:
+    foreign_key_constraint_on: category_id
+- name: store
+  using:
+    foreign_key_constraint_on: store_id
+array_relationships:
+- name: order_x_items
+  using:
+    foreign_key_constraint_on:
+      column: item_id
+      table:
+        name: order_x_items
+        schema: public

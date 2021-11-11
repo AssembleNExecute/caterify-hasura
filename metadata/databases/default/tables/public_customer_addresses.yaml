@@ -5,3 +5,90 @@ object_relationships:
 - name: user
   using:
     foreign_key_constraint_on: user_id
+array_relationships:
+- name: orders
+  using:
+    foreign_key_constraint_on:
+      column: customer_address_id
+      table:
+        name: orders
+        schema: public
+insert_permissions:
+- permission:
+    backend_only: false
+    check:
+      user:
+        id:
+          _eq: X-Hasura-User-Id
+    columns:
+    - id
+    - user_id
+    - is_active
+    - geo_location
+    - address_line_1
+    - address_line_2
+    - city
+    - country
+    - directions
+    - display_name
+    - landmark
+    - pincode
+    - state
+    - created_at
+    - updated_at
+  role: customer
+select_permissions:
+- permission:
+    allow_aggregations: true
+    columns:
+    - id
+    - user_id
+    - address_line_1
+    - address_line_2
+    - city
+    - state
+    - pincode
+    - country
+    - directions
+    - landmark
+    - display_name
+    - geo_location
+    - created_at
+    - updated_at
+    - is_active
+    filter:
+      user:
+        id:
+          _eq: X-Hasura-User-Id
+  role: customer
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - id
+    - user_id
+    - is_active
+    - geo_location
+    - address_line_1
+    - address_line_2
+    - city
+    - country
+    - directions
+    - display_name
+    - landmark
+    - pincode
+    - state
+    - created_at
+    - updated_at
+    filter:
+      user:
+        id:
+          _eq: X-Hasura-User-Id
+  role: customer
+delete_permissions:
+- permission:
+    filter:
+      user:
+        id:
+          _eq: X-Hasura-User-Id
+  role: customer
