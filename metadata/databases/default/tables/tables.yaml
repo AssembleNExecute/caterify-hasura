@@ -1,1 +1,4 @@
+- "!include public_customer_addresses.yaml"
 - "!include public_roles.yaml"
+- "!include public_user_x_roles.yaml"
+- "!include public_users.yaml"
