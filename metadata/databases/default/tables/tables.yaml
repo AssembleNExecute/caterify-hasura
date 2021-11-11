@@ -1,4 +1,8 @@
+- "!include public_business.yaml"
 - "!include public_customer_addresses.yaml"
 - "!include public_roles.yaml"
+- "!include public_social_media_profiles.yaml"
+- "!include public_stores.yaml"
 - "!include public_user_x_roles.yaml"
 - "!include public_users.yaml"
+- "!include public_view_enums.yaml"

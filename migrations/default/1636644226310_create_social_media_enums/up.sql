@@ -1,0 +1,1 @@
+CREATE TYPE social_media_enum AS ENUM ('FACEBOOK', 'TWITTER', 'INSTAGRAM', 'WHATSAPP');

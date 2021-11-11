@@ -1,0 +1,22 @@
+table:
+  name: business
+  schema: public
+object_relationships:
+- name: user
+  using:
+    foreign_key_constraint_on: business_owner_id
+array_relationships:
+- name: social_media_profiles
+  using:
+    foreign_key_constraint_on:
+      column: business_id
+      table:
+        name: social_media_profiles
+        schema: public
+- name: stores
+  using:
+    foreign_key_constraint_on:
+      column: business_id
+      table:
+        name: stores
+        schema: public
