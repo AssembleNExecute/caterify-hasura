@@ -1,6 +1,16 @@
-actions: []
+actions:
+- name: check_user
+  definition:
+    kind: ""
+    handler: '{{ACTION_HANDLER}}/check_user'
+- name: create_admin
+  definition:
+    kind: synchronous
+    handler: '{{ACTION_HANDLER}}/create_admin'
 custom_types:
   enums: []
   input_objects: []
-  objects: []
+  objects:
+  - name: CheckUserOutput
+  - name: CreateAdminOutput
   scalars: []

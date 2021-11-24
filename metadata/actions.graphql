@@ -1,0 +1,28 @@
+type Query {
+  check_user(
+    email: String!
+  ): CheckUserOutput
+}
+
+type Mutation {
+  create_admin(
+    email: String!
+    password: String!
+  ): CreateAdminOutput
+}
+
+type CheckUserOutput {
+  status: Boolean
+  message: String
+  user: jsonb
+  error: jsonb
+}
+
+type CreateAdminOutput {
+  status: Boolean
+  message: String!
+  firebaseUser: jsonb
+  firebaseResponse: jsonb
+  error: jsonb
+}
+
