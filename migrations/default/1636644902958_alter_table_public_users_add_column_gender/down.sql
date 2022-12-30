@@ -2,3 +2,5 @@
 -- Please write an appropriate down migration for the SQL below:
 -- alter table "public"."users" add column "gender" gender_enum
 --  null;
+
+alter table "public"."users" drop column "gender";

@@ -17,3 +17,5 @@
 -- ORDER BY
 --   t.typname,
 --   e.enumsortorder;
+
+DROP VIEW IF EXISTS "public"."view_enums";
